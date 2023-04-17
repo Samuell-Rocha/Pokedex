@@ -1,0 +1,44 @@
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img {
+    border-style: none;
+    height: 120px;
+    margin: 0 auto;
+    max-width: 100%;
+    
+
+}
+
+.types {
+    padding: 0;
+    margin-top: 10px;
+    list-style: none;
+
+
+}
+
+.number {
+    text-align: right;
+    color: black;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+.type {
+    text-align: center;
+    padding: 10px;
+    background-color: #61e1ca;
+    border-radius: 10px;
+    margin: 10px;
+    color: rgb(253, 253, 252);
+}
