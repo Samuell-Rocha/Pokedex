@@ -6,29 +6,32 @@ function convertPokemonToLi(pokemon) {
 
                 <div class="detail">
                     <ol class="types">
-                        <li class="type">${pokemon.types[0].type.name}</li>
-                        <li class="type">ggrass</li>
+                        <li class="type">${verifica(pokemon.types[0])}</li>
+                        <li class="type">${verifica(pokemon.types[1])}</li>
                     </ol>
-                    <img src="/assets/img/bulbasaur-seeklogo.com.svg" alt="${pokemon.name}">
+                    <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}r">
                 </div>
 
             </li>
             `
+          
 }
 
-const pokemonList = document.getElementById('pokemonList')
+const pokemonList = document.getElementById('pokemonList') //ol
 
 
-function verifica(type) {
-    if (typeof type == "undefined") {
+function verifica(types) {
+    if (typeof types == "undefined") {
         return null
     }
     else {
-        return type.type.name
+        return types.type.name
     }
 
 }
 
 pokeApi.pl().then((pokemons) =>{
-    pokemonList.innerHTML+= pokemons.map(convertPokemonToLi).join('')
+   pokemonList.innerHTML = pokemons.map(convertPokemonToLi).join('')
 })
+
+

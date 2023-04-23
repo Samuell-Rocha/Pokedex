@@ -27,7 +27,7 @@ body {
 
 #pokemonList {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -43,6 +43,7 @@ body {
     border-radius: 1rem;
     color: white;
     height: 200px;
+    font-weight: bold ;
 
 
 }
@@ -54,11 +55,20 @@ body {
     }
 
     #pokemonList {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
-    img {
-        margin: 0 auto;
+}
+@media screen and (min-width: 750px) and (max-width: 992px) {
+    .content {
+
+        margin: 0;
     }
+
+    #pokemonList {
+        grid-template-columns: 1fr 1fr;
+    }
+
+  
 
 }
