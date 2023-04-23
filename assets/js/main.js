@@ -1,37 +1,22 @@
 
 function convertPokemonToLi(pokemon) {
-    return `<li class="pokemon">
-                <span class="number">${pokemon.id}</span>
+    return `<li class="pokemon ${pokemon.type_color}">
+                <span class="number">${pokemon.number}</span>
                 <span class="name">${pokemon.name}</span>
 
                 <div class="detail">
                     <ol class="types">
-                        <li class="type">${verifica(pokemon.types[0])}</li>
-                        <li class="type">${verifica(pokemon.types[1])}</li>
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                     </ol>
-                    <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}r">
+                    <img src="${pokemon.photo}" alt="${pokemon.name}">
                 </div>
 
             </li>
-            `
-          
+            `         
 }
 
 const pokemonList = document.getElementById('pokemonList') //ol
 
-
-function verifica(types) {
-    if (typeof types == "undefined") {
-        return null
-    }
-    else {
-        return types.type.name
-    }
-
-}
-
 pokeApi.pl().then((pokemons) =>{
    pokemonList.innerHTML = pokemons.map(convertPokemonToLi).join('')
 })
-
-
