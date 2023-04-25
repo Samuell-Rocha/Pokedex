@@ -15,15 +15,19 @@ body {
     padding: 1rem auto;
     background-color: #2b292c;
 }
-
-.content h1 {
-    margin: 0;
-    padding: 0 auto;
+.BarraSuperior{
+    display: flex;
     background-color: #d53b47;
     margin-bottom: 0.5rem;
     color: white;
-    padding-left: 1rem;
+    padding:15px;
+    justify-content: space-between;
 }
+
+.content h1 {
+   text-align: center;
+}
+
 
 #pokemonList {
     display: grid;
@@ -42,18 +46,21 @@ body {
     border-radius: 1rem;
     color: white;
     height: 200px;
-    font-weight: bold ;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
 
 
 }
 .pokemon:hover{
   filter: opacity(80%);
+  transform: scale(1.05);
 }
 
 .normal{background-color: #a8a77a}
 .fire {background-color: #ee8130}
 .water{background-color:  #6390f0}
-.eletric{background-color:  #f7d02c}
+.electric{background-color:  #f7d02c}
 .grass {background-color: #7ac74c}
 .ice {background-color: #96d9d6}
 .fighting{background-color:  #c22e28}
